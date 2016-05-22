@@ -1,5 +1,5 @@
 $white: #FFFFFF;
-$dark: #bababa;
+$dark: #7c7c7c;
 $light: #f4f4f4;
 $highlight: #8bc6db;
 $border: #E9E9E9;
@@ -158,7 +158,26 @@ body {
 
 .center {
   text-align: center;
+  h3 {
+    a {
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-transform: capitalize;
+      letter-spacing: 0;
+      text-decoration: underline;
+      color: $dark;
+    }
+  }
+  .seller-name {
+    color: $highlight;
+    font-style: italic;
+    font-weight: bold;
+  }
+  .amount {
+    font-weight: bold;
+  }
 }
+
 /*==================================
       BUTTONS
 ==================================*/

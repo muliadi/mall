@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @categories = Category.all
   end
 
   # GET /items/1
@@ -19,7 +20,11 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params)
+    if params[:category].blank? && params[:search].blank?
+      @items = Item.all.order(created_at: :desc).page(params[:page]).per(20)
+    else
+      @items = Item.search(params)
+    end
   end
   # GET /items/1/edit
   def edit
