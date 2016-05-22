@@ -1,0 +1,27 @@
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="thumbnail">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <span class="label label-danger"><%= @item.id %></span>
+        <h3><%= @item.name %></h3>
+        <p><%= number_to_currency(@item.price) %></p>
+        <p><%= @item.description %></p>
+        <span class="label label-success">
+          <%=  @item.category.name %>
+        </span><br >
+        <br>
+        <button type="button" name="button" class="btn btn-primary">Add to Cart</button>
+        <button type="button" name="button" class="btn btn-primary">Contact Seller</button>
+      </div>
+    </div>
+
+
+    <%= link_to 'Edit', edit_item_path(@item) %> |
+    <%= link_to 'Back', items_path %>
+
+  </div>
+</div>

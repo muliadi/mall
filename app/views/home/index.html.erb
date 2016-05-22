@@ -1,0 +1,28 @@
+<section>
+      <div class="container">
+        <div class="row">
+            <div class="main-section">
+              <div class="col-md-12">
+                <div class="main-search clearfix">
+                  <%= form_tag search_items_path, method: :get do |f| %>
+                    <%= text_field_tag :search, nil, placeholder: "Example: iPhone 7", class: "col-md-9" %>
+                    <%= submit_tag "Search", class: "col-md-3 button" %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="">
+                <% @categories.each do |category| %>
+                  <div class="col-lg-4 col-md-6 ">
+                    <div class="category">
+                      <div class="category-inner">
+                        <h3><%= link_to category.name, category_path(category.id) %></h3>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
