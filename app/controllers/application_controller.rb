@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :getCategory
+  before_action :getUser
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -17,5 +18,9 @@ class ApplicationController < ActionController::Base
   private
   def getCategory
     @getCategory = Category.all
+  end
+
+  def getUser
+    @getUser = User.all
   end
 end

@@ -14,9 +14,14 @@
         <p><%= @item.description %></p>
         <label>Location:</label>
         <p><%= @item.location %></p>
+        Sold by
+        <p class="label label-primary">
+          <%= " #{@item.user.name}" %>
+        </p><br >
         <span class="label label-success">
           <%=  @item.category.name %>
         </span><br >
+
         <br>
         <button type="button" name="button" class="btn btn-primary">Add to Cart</button>
         <button type="button" name="button" class="btn btn-primary">Contact Seller</button>
@@ -26,6 +31,7 @@
 
     <%= link_to 'Edit', edit_item_path(@item) %> |
     <%= link_to 'Back', items_path %>
+    <%= link_to 'Delete', @item, method: :delete, data: { confirm: "Are you sure?" }%>
 
   </div>
 </div>

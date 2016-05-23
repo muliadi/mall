@@ -12,7 +12,8 @@
               <h3><%= link_to item.name, item %></h3>
               <p class="amount"><%= number_to_currency(item.price) %></p>
               <p><%= item.location %></p>
-              <p class="seller-name"><%= "Sold by " %></p>
+              Sold by:
+              <p class="seller-name label label-primary"><%= " #{item.user.name}" %></p>
 
             </div>
           </div>

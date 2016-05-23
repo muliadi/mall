@@ -1,7 +1,8 @@
 class Item < ActiveRecord::Base
   belongs_to :category
+  belongs_to :user
 
-  validates :name, :description, :price, :location, presence: true
+  validates :name, :description, :price, :location, :category_id, presence: true
 
   def self.search(params)
     if params[:category].present?
