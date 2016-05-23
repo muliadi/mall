@@ -8,8 +8,12 @@
       <div class="col-md-6">
         <span class="label label-danger"><%= @item.id %></span>
         <h3><%= @item.name %></h3>
+        <label>Price:</label>
         <p><%= number_to_currency(@item.price) %></p>
+        <label>Description:</label>
         <p><%= @item.description %></p>
+        <label>Location:</label>
+        <p><%= @item.location %></p>
         <span class="label label-success">
           <%=  @item.category.name %>
         </span><br >

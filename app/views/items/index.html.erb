@@ -8,12 +8,12 @@
         <div class="col-md-3">
           <div class="thumbnail">
             <div class="caption">
-
+              <span class="label label-success"><%= item.category.name %></span>
               <h3><%= link_to item.name, item %></h3>
               <p class="amount"><%= number_to_currency(item.price) %></p>
               <p><%= item.location %></p>
               <p class="seller-name"><%= "Sold by " %></p>
-              <%= link_to 'Edit', edit_item_path %>
+
             </div>
           </div>
         </div>
