@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :destroy, :update]
   # GET /items
   # GET /items.json
   def index
@@ -77,8 +78,14 @@ class ItemsController < ApplicationController
       @item = Item.find(params[:id])
     end
 
+    def check_user
+      if current_user != @item.user
+        redirect_to root_url, alert: "Sorry, You're not the owner of this Item"
+      end
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :price, :location, :category_id)
+      params.require(:item).permit(:name, :description, :price, :location, :category_id, :image)
     end
 end

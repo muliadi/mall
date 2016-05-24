@@ -36,73 +36,124 @@ body {
 	clear: both;
 }
 
-.main_nav_elements {
-  float: right;
+nav {
+	border-radius: 0;
+	background-color: #FFFFFF;
+  margin-bottom: 0;
+	.navbar-brand {
+		a {
+			color: #BD1E23;
+			font-weight: bold;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
 }
 
-#top-nav {
-  border-bottom: 1px solid $light;
-  box-shadow: 1px 0 1px 0;
+.navbar {
+	border-radius: 0;
+	background-color: #FFFFFF;
+  margin-bottom: 0 !important;
 }
 
-#name {
-  color: $claeusRed;
-  font-size: 1.5rem;
+.navbar-right {
+	a {
+		padding: 1rem;
+		line-height: 52px;
+		font-size: 1.3rem;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.button-default {
+		border-radius: 0;
+	}
 }
 
-.main_nav_elements {
-  li{
-    list-style: none;
-    display: inline-block;
-    margin-top: 1rem;
+.navbar-default {
+	background-color: white;
+	margin-bottom: 0;
+	border-radius: 0;
+	.navbar-nav {
+		li{
+			a{
+				padding: .8rem auto;
+			}
+		}
+	}
+}
+
+.navbar-brand {
+	font-weight: bold;
+	font-size: 2rem;
+	font-family: monospace;
+  line-height: inherit;
+}
+
+.navbar-form {
+	margin: 0;
+	padding: 0;
+}
+
+.main-search {
+	margin: 1rem auto;
+	padding: 0;
+	width: 100%;
+	.col-md-9 {
+		margin-right: 0;
+		margin-left: 2rem;
+		padding: 0;
+    padding-left: 2rem;
+	}
+
+
+	.form-group {
+    margin: 0 auto;
+			width: 100%;
+			input[type="text"]{
+			width: 60%;
+			padding: .7rem;
+			border-radius: 0;
+			margin: 0  0 0 3rem;
+			border: 2px solid #ff4444;
+			height: 45px;
+			}
+			.button-default{
+			margin: 0 3rem 0 0;
+			height: 45px;
+			width: 20%;
+			}
+		}
+}
+
+
+.main {
+	width: 100%;
+	height: 300px;
+	background-image: url('jumbotron.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: $white;
+
+
+}
+#only-text {
+  a{
+    text-align: center;
   }
-  a {
-    text-decoration: none;
-    margin-right: 1rem;
-  }
+}
+.banner-elements {
+	width: 90%;
+	margin: 5rem auto;
+	padding: 5rem auto;
+	h4 {
+		margin-top: 0;
+	}
 }
 
 
-.float-left {
-  float: left;
-}
-
-
-.list-group{
-  border: 0 ;
-}
-
-.main-section {
-  margin: 2rem auto;
-  width: 100%;
-  .form-group {
-    width: 100%;
-  }
-  .main-search {
-    input[type="text"]{
-      width: 70%;
-      float: left;
-      height: 45px;
-      margin-right: 2.5px;
-      border-radius: 5rem;
-    }
-    .button {
-      width: 25%;
-      background-color: $claeusRed;
-      height: 45px;
-      margin-left: 2.5px;
-      font-family: monospace;
-      border-radius: 5rem;
-      border: 1px solid $claeusRed;
-      color: $white;
-      &:hover {
-        background-color: $white;
-        text-shadow: 2px;
-        color: $light;
-      }
-    }
-  }
-}
 
 .category {
   width: 100%;
@@ -128,72 +179,64 @@ body {
   }
 }
 
+
+/*****************************
+		FOOTER
+******************************/
+
 .bottom-section {
-  background-color: #e5e5e5;
+  background-color: #303945;
   min-height: 200px;
   padding: 5%;
+  color: #8c9098;
+	margin-top: 2rem;
   a {
       display: block;
-      font-size: 1.2rem;
-      font-size: 14px;
+      font-size: 13px;
+      color: #FFFFFF;
+      font-weight: 500;
   }
   .foot-note {
     margin: 3rem auto;
     text-align: center;
   }
 }
+/*****************************
+		BUTTONS
+******************************/
 
-.core-value-banner {
-  background-color: #f6f6f6;
-  padding: 5%;
-  h3 {
-    font-weight: bold;
-    padding: .5rem;
-  }
+.button-default {
+	padding: .7rem;
+	border: 1px solid white;
+	margin-right: 1rem;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+	background-color: $claeusRed;
+	color: #FFFFFF;
 }
 
-.section {
-  min-height: 400px;
+.button-cart, .button-other {
+	padding: 3px 6px;
+	width: 120px;;
 }
 
-.center {
-  text-align: center;
-  h3 {
-    a {
-      font-size: 1.5rem;
-      font-weight: 600;
-      text-transform: capitalize;
-      letter-spacing: 0;
-      text-decoration: underline;
-      color: $dark;
-    }
-  }
-  .seller-name {
-    color: $highlight;
-    font-style: italic;
-    font-weight: bold;
-  }
-  .amount {
-    font-weight: bold;
-  }
+.button-contact {
+	margin-top: .578rem;
+	border: 1.5px solid white;
+	background-color: #ff4444;
+	color: #FFFFFF;
+	padding: 1rem;
+	width: 245px;
 }
 
-/*==================================
-      BUTTONS
-==================================*/
-
-.button {
-  padding: .5rem;
-  border: 1px solid $claeusRed;
+.button-other {
+	border: 1px solid #FE5F55;
+	background-color: #FFFFFF;
+	color: #ff4444;
+	width: 120px;
 }
-/*==================================
-      FORMS
-==================================*/
 
-.claeus-form {
-  width: 70%;
-  margin: 5rem auto;
-}
+
 /*==================================
       MEDIA QUERIES
 ==================================*/
@@ -205,13 +248,28 @@ body {
   }
 
   .main-search{
-    input[type="text"]{
+    padding: 0;
+    .form-group {
       width: 100%;
+      input[type="text"]{
+        width: 75%;
+        margin: 0;
+      }
+
+      .button-default{
+        width: 20%;
+        margin: 0;
+        padding: 0;
+      }
     }
-    .button{
+    input[type="text"]{
+      margin: 0 !important;
+    }
+    .button-default{
       width: 100%;
     }
   }
+
 }
 
 @media screen and (max-width: 480px){
@@ -220,6 +278,62 @@ body {
       padding: 5%;
     }
   }
+  .main-search{
+    padding: 0;
+    .form-group {
+      width: 100%;
+      input[type="text"]{
+        width: 75%;
+        margin: 0;
+      }
+
+      .button-default{
+        width: 20%;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    input[type="text"]{
+      margin: 0 !important;
+    }
+    .button-default{
+      width: 100%;
+    }
+  }
+
+  .col-md-3{
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1500px) and (min-width: 769px){
+  .category {
+    .category-inner {
+      padding: 5%;
+    }
+  }
+  .main-search{
+    padding: 0;
+    .form-group {
+      width: 100%;
+      input[type="text"]{
+        width: 75%;
+        margin: 0;
+      }
+
+      .button-default{
+        width: 20%;
+        margin: 0;
+      }
+    }
+    input[type="text"]{
+      margin: 0 !important;
+    }
+    .button-default{
+      width: 100%;
+    }
+  }
+
 
   .col-md-3{
     margin-top: 1.5rem;

@@ -1,3 +1,58 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$white: #FFFFFF;
+$dark: #7c7c7c;
+$light: #f4f4f4;
+$highlight: #8bc6db;
+$border: #E9E9E9;
+$claeusRed: #f61616;
+
+.cat-list {
+  li{
+    list-style: none;
+    a {
+      padding: .5rem;
+      color: $dark;
+    }
+  }
+}
+.col-md-4 {
+  padding: 0;
+}
+
+.section {
+  min-height: 400px;
+  margin: 2rem auto;
+  .col-md-2,
+  .col-md-8 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+}
+.section-part {
+  border: 1px solid $light;
+  width: 100%;
+  padding: 1rem;
+}
+
+.main-banner {
+  background-image: url('money.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 2rem;
+  height: 350px;
+  padding: 0;
+}
+
+.section-header {
+  background-color: $light;
+  border-bottom: 1px solid $dark;
+  padding: .5rem;
+  margin-top: .5rem;
+  a {
+    font-size: 1rem;
+  }
+}
