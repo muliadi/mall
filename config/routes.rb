@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get "seller", to: "items#seller"
 
   root 'home#index'
 end

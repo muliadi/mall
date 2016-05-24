@@ -9,6 +9,9 @@ class ItemsController < ApplicationController
     @categories = Category.all
   end
 
+  def seller
+    @items = Item.where(user: current_user).order("created_at DESC")
+  end
   # GET /items/1
   # GET /items/1.json
   def show
