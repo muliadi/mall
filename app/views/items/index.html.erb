@@ -16,6 +16,10 @@
               <p class="seller-name label label-primary"><%= " #{item.user.name}" %></p>
 
             </div>
+            <% if (user_signed_in?) && (current_user == item.user) %>
+              <%= link_to "Edit", edit_item_path(item) %>
+              <%= link_to "Delete", item, method: :get, data: {confirm: "Are you sure?"} %>
+            <% end %>
           </div>
         </div>
       <% end %>
@@ -23,5 +27,7 @@
   </div>
 
   <br>
-  <%= link_to 'New Item', new_item_path %>
+  <%= if (user_signed_in?) %>
+    <%= link_to 'New Item', new_item_path %>
+  <% end %>
 </div>

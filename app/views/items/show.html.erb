@@ -29,10 +29,10 @@
       </div>
     </div>
 
-
-    <%= link_to 'Edit', edit_item_path(@item) %> |
-    <%= link_to 'Back', items_path %>
-    <%= link_to 'Delete', @item, method: :delete, data: { confirm: "Are you sure?" }%>
-
+    <% if (user_signed_in?) && (current_user == @item.user) %>
+      <%= link_to "Edit", edit_item_path(@item) %>
+      <%= link_to 'Back', items_path %>
+      <%= link_to "Delete", @item, method: :get, data: {confirm: "Are you sure?"} %>
+    <% end %>
   </div>
 </div>
