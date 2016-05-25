@@ -1,33 +1,34 @@
 
-
-<div class="container">
-  <div class="center">
-    <div class="row">
-      <p id="notice"><%= notice %></p>
-      <% @items.each do |item| %>
-        <div class="col-md-3">
-          <div class="thumbnail">
-            <div class="caption">
-              <span class="label label-success"><%= item.category.name %></span>
-              <h3><%= link_to item.name, item %></h3>
-              <p class="amount"><%= number_to_currency(item.price) %></p>
-              <p><%= item.location %></p>
-              Sold by:
-              <p class="seller-name label label-primary"><%= " #{item.user.name}" %></p>
-
+<div class="section">
+  <div class="container">
+    <div class="center">
+      <div class="row">
+        <% @items.each do |item| %>
+          <div class="col-md-2">
+            <div class="thumbnail">
+              <%= link_to image_tag(item.image.url(:medium)), item %>
+              <div class="caption">
+                <span class="label label-success"><%= item.category.name %></span>
+                <h3><%= link_to item.name, item %></h3>
+                <p class="amount"><%= number_to_currency(item.price) %></p>
+                <span><i class="fa fa-map-marker" aria-hidden="true"><%= item.location %></i></span>
+                by:
+                <p class="seller-name label label-primary"><%= " #{item.user.name}" %></p>
+                <br>
+                <% if (user_signed_in?) && (current_user == item.user) %>
+                  <%= link_to "Edit", edit_item_path(item), class: "fa fa-retweet"%>
+                  <%= link_to "Delete", item, class: "fa fa-trash-o", method: :get, data: {confirm: "Are you sure?"} %>
+                <% end %>
+              </div>
             </div>
-            <% if (user_signed_in?) && (current_user == item.user) %>
-              <%= link_to "Edit", edit_item_path(item) %>
-              <%= link_to "Delete", item, method: :get, data: {confirm: "Are you sure?"} %>
-            <% end %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-  <br>
-  <%= if (user_signed_in?) %>
-    <%= link_to 'New Item', new_item_path %>
+    <br>
+    <% if user_signed_in? %>
+    <%= link_to "New item", new_item_path, class: "btn btn-primary", data: { no_turbolink: true } %>
   <% end %>
+  </div>
 </div>

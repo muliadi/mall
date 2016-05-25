@@ -26,8 +26,19 @@ $claeusRed: #f61616;
   margin: 2rem auto;
   .col-md-2,
   .col-md-8 {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+    padding-right: .1rem !important;
+    padding-left: .1rem !important;
+  }
+  .col-md-2 {
+    height: 100%;
+    margin-bottom: .5rem;
+    img {
+      height: 80%;
+      width: 100%;
+    }
+  }
+  .col-md-10 {
+    padding: 2rem;
   }
 
 }
@@ -55,4 +66,29 @@ $claeusRed: #f61616;
   a {
     font-size: 1rem;
   }
+}
+
+#pins {
+  margin: 0 auto;
+  width: 100%;
+  .box {
+	  margin: 10px;
+    width: 100%;
+	  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+	  border-radius: 7px;
+	  text-align: center;
+	  img {
+	  	max-width: 100%;
+	  	height: auto;
+	  }
+	  h2 {
+	  	font-size: 22px;
+	  	margin: 0;
+	  	padding: 25px 10px;
+	  	a {
+				color: #474747;
+	  	}
+	  }
+
+	}
 }

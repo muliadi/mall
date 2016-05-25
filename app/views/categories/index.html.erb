@@ -1,21 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <section class="section">
+    <div class="row">
+        <% @categories.each do |category| %>
+          <div class="col-md-2">
+            <div class="thumbnail">
+              <div class="caption">
+                <h3><%= link_to category.name, category_path(category.id) %></h3>
 
-<h1>Listing Categories</h1>
-
-
-
-<div class="row">
-  <% @categories.each do |category| %>
-    <div class="col-lg-4 col-md-6 ">
-      <div class="category">
-        <div class="category-inner">
-          <h3><%= link_to category.name, category_path(category.id) %></h3>
-        </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
-    </div>
-  <% end %>
+  </section>
+
+  <%= link_to 'New Category', new_category_path %>
+
 </div>
-
-<br>
-
-<%= link_to 'New Category', new_category_path %>

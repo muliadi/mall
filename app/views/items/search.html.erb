@@ -1,46 +1,40 @@
-
-<div class="row">
-  <div class="container-fluid">
-    <div class="col-md-2">
-      <h3 class="sub-heading">Advanced Search</h3>
-      <%= form_tag search_items_path, method: :get do  |f| %>
-        <div class="form-group">
-          <label>Search</label>
-          <%= text_field_tag :search, nil, placeholder: "iPhone, Nike, etc.", class: "form-control"%>
-        </div>
-        <div class="form-group">
-          <label>Category</label>
-          <%= select_tag :category, options_from_collection_for_select(Category.all, :id, :name), class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <label>Location</label>
-          <%= text_field_tag :location, nil, placeholder: "Accra, Kumasi, etc.", class: "form-control"%>
-        </div>
-        <%= submit_tag "Search", class: "button" %>
-      <% end %>
-    </div>
-    <div class="col-md-10">
-      <div>
-        <div class="center">
-          <div class="row">
-            <% @items.each do |item| %>
-              <div class="col-md-3">
-                <div class="thumbnail">
-                  <div class="caption">
-                    <span class="label label-success"><%= item.category.name %></span>
-                    <h3><%= link_to item.name, item %></h3>
-                    <p><%= number_to_currency(item.price) %></p>
-                    <p><%= "Sold by " %></p>
-                  </div>
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <h3 class="sub-heading">Advanced Search</h3>
+        <%= form_tag search_items_path, method: :get do  |f| %>
+          <div class="form-group">
+            <label>Search</label>
+            <%= text_field_tag :search, nil, placeholder: "iPhone, Nike, etc.", class: "form-control"%>
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <%= select_tag :category, options_from_collection_for_select(Category.all, :id, :name), class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <%= text_field_tag :location, nil, placeholder: "Accra, Kumasi, etc.", class: "form-control"%>
+          </div>
+          <%= submit_tag "Search", class: "button-other" %>
+        <% end %>
+      </div>
+      <div class="col-md-10">
+              <% @items.each do |item| %>
+              <div class="media">
+                <div class="media-left">
+                  <%= link_to image_tag(item.image.url(:thumb)), item %>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading"><%= link_to item.name, item %></h4>
+                  <p  class= "well"><%= item.description%></p>
+                  <p><%= number_to_currency(item.price) %>  |  <span class="label label-success"><%= item.category.name %> </span> |  | <span class="label label-primary"><%= "Sold by #{item.user.name} " %></span> </p>
                 </div>
               </div>
-            <% end %>
-          </div>
-        </div>
-
-        <br>
+              <% end %>
+          <br>
       </div>
     </div>
-
   </div>
+
 </div>

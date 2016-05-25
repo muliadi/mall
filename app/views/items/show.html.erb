@@ -7,21 +7,19 @@
         </div>
       </div>
       <div class="col-md-6">
+        <span class="label label-success">
+          <%=  @item.category.name %>
+        </span><br ><br>
         <span class="label label-danger"><%= @item.id %></span>
-        <h3><%= @item.name %></h3>
-        <label>Price:</label>
-        <p><%= number_to_currency(@item.price) %></p>
+        <h3><%= @item.name %>  | <%= number_to_currency(@item.price) %></h3>
         <label>Description:</label>
-        <p><%= @item.description %></p>
-        <label>Location:</label>
-        <p><%= @item.location %></p>
-        Sold by
+        <p  class= "well item-desc "><%= @item.description%></p>
+        <i class="fa fa-map-marker" aria-hidden="true"><%= @item.location %></i><br><br>
+        By
         <p class="label label-primary">
           <%= " #{@item.user.name}" %>
         </p><br >
-        <span class="label label-success">
-          <%=  @item.category.name %>
-        </span><br >
+
 
         <br>
         <button type="button" name="button" class="btn btn-primary">Add to Cart</button>
