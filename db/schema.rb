@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524025930) do
+ActiveRecord::Schema.define(version: 20160526020757) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -47,9 +47,19 @@ ActiveRecord::Schema.define(version: 20160524025930) do
   create_table "shops", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "category_id"
+    t.integer  "user_id"
+    t.text     "description"
+    t.string   "city"
+    t.string   "country"
+    t.string   "phone"
+    t.text     "address"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "shops", ["category_id"], name: "index_shops_on_category_id"
@@ -68,6 +78,12 @@ ActiveRecord::Schema.define(version: 20160524025930) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "city"
+    t.string   "country"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

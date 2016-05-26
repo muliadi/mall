@@ -1,14 +1,51 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="shop-banner">
+        <%=  image_tag(@shop.image) %>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-3 section-part">
+        <p>
+          <strong>Name:</strong>
+          <%= @shop.name %>
+        </p>
+        <p>
+          <strong>Owned by:</strong>
+          <%= @shop.user.name %>
+        </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @shop.name %>
-</p>
+        <p>
+          <strong>Location:</strong>
+          <%= @shop.location %>
+        </p>
+      </div>
+      <div class="col-md-9 section-part">
+        <div class="row">
+          <% @current_user.items.each do |item| %>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <%= link_to image_tag(item.image.url(:medium)), item %>
+                <div class="caption">
+                  <span class="label label-success"><%= item.category.name %></span>
+                  <h3><%= link_to item.name, item %></h3>
+                  <p class="amount"><%= number_to_currency(item.price) %></p>
+                  <span><i class="fa fa-map-marker" aria-hidden="true"><%= item.location %></i></span>
+                  by:
+                  <p class="seller-name label label-primary"><%= " #{item.user.name}" %></p>
+                  <br>
+                </div>
+              </div>
+            </div>
+          <% end %>
+            </div>
+        </div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @shop.location %>
-</p>
-
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
-<%= link_to 'Back', shops_path %>
+      </div>
+      <hr>
+      <% if (user_signed_in?) && (current_user == @shop.user) %>
+        <%= link_to 'Edit', edit_shop_path(@shop) %> |
+        <%= link_to 'Back', shops_path %>
+        <%= link_to "Add new item", new_item_path(@item), class: "button-other" %>
+        <!--Add these links later to "MANAGE ITEMS page"  -->
+      <% end %>
+    </div>

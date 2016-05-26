@@ -11,6 +11,7 @@ $claeusRed: #f61616;
 .cat-list {
   li{
     list-style: none;
+    display: inline-block;
     a {
       padding: .5rem;
       color: $dark;
@@ -66,29 +67,4 @@ $claeusRed: #f61616;
   a {
     font-size: 1rem;
   }
-}
-
-#pins {
-  margin: 0 auto;
-  width: 100%;
-  .box {
-	  margin: 10px;
-    width: 100%;
-	  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
-	  border-radius: 7px;
-	  text-align: center;
-	  img {
-	  	max-width: 100%;
-	  	height: auto;
-	  }
-	  h2 {
-	  	font-size: 22px;
-	  	margin: 0;
-	  	padding: 25px 10px;
-	  	a {
-				color: #474747;
-	  	}
-	  }
-
-	}
 }

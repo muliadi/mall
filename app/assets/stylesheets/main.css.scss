@@ -17,7 +17,7 @@ $claeusRed: #f61616;
 }
 
 body {
-  background-color: $white;
+  background-color: #fcfcfc !important;
 }
 
 .container {
@@ -38,7 +38,7 @@ body {
 
 nav {
 	border-radius: 0;
-	background-color: #FFFFFF;
+	background-color: #e5e5e5 !important;
   margin-bottom: 0;
 	.navbar-brand {
 		a {
@@ -76,15 +76,15 @@ nav {
 
 .main-search {
   .form-control,
-  .btn-default {
-    border: 2px solid $claeusRed;
+  .button-other {
+    border: 2px solid $light !important;
   }
   .form-control {
     width: 400px !important;
     padding: .6rem;
     border-radius: 0;
   }
-  .btn-default {
+  .button-other {
     width: 120px !important;
     border-radius: 0;
   }
@@ -125,23 +125,25 @@ nav {
     width: 100%;
     height: 75%;
   }
+  .caption {
+    height: 25%;
+    padding: 0;
+    background-color: $light;
+    h3 {
+      font-weight: bold;
+      text-transform: capitalize;
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+      font-size: 1.3rem;
+    }
+    p {
+      margin-bottom: .2rem;
+    }
+  }
 
 }
 
-.caption {
-  height: 25%;
-  padding: 0;
-  h3 {
-    font-weight: bold;
-    text-transform: capitalize;
-    margin-top: .5rem;
-    margin-bottom: .5rem;
-    font-size: 1.3rem;
-  }
-  p {
-    margin-bottom: .2rem;
-  }
-}
+
 
 .item-desc {
   min-height: 10rem;
@@ -173,13 +175,53 @@ span {
   text-align: center;
 }
 
-.form-control,
-.form-control:focus {
-  border: 2px solid $claeusRed !important;
-  border-radius: 0 !important;
-  box-shadow: 0 0 0 0 !important;
+
+.round-image-50 {
+
+  img{
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid $light;
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    overflow: hidden;
+    text-align: center;
+  }
 }
 
+.round-image-100{
+
+  img{
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid $light;
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+    overflow: hidden;
+    text-align: center;
+  }
+}
+
+.center {
+  max-width: 50%;
+  margin: 1rem auto;
+}
+
+textarea {
+  min-height: 200px !important;
+}
+
+.shop-banner {
+  height: 300px;
+  img {
+    width: 100%;
+    height: 100%;
+    position: inherit;
+  }
+
+}
 
 /*****************************
 		FOOTER

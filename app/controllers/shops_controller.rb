@@ -10,11 +10,14 @@ class ShopsController < ApplicationController
   # GET /shops/1
   # GET /shops/1.json
   def show
+    @items = Item.where(user: current_user).order("created_at DESC")
   end
 
   # GET /shops/new
   def new
     @shop = Shop.new
+    @user = User.new
+    @category = Category.new
   end
 
   # GET /shops/1/edit
@@ -25,6 +28,8 @@ class ShopsController < ApplicationController
   # POST /shops.json
   def create
     @shop = Shop.new(shop_params)
+    @shop.user_id = current_user.id
+    @shop.user.name = current_user.name
 
     respond_to do |format|
       if @shop.save
@@ -69,6 +74,6 @@ class ShopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shop_params
-      params.require(:shop).permit(:name, :location)
+      params.require(:shop).permit(:name, :location, :description, :city, :country, :category_id, :image, :address)
     end
 end

@@ -1,19 +1,17 @@
 
+      <div class="cat-nav">
+        <ul class="cat-list">
+          <% @categories.each do |category| %>
+              <li><%= link_to category.name, category_path(category.id) %></li>
+          <% end %>
+        </ul>
+      </div>
+
+
 <div class="container">
   <section class="section clearfix">
     <div class="row">
-      <div class="col-md-2">
-        <div class="section-part">
-          <div class="cat-nav">
-            <h4 class="section-header">Categories<i class="fa fa-chevron-circle-right" aria-hidden="true"><%= link_to "See all", categories_path %></i></h4>
-            <% @categories.each do |category| %>
-              <ul class="cat-list">
-                <li><%= link_to category.name, category_path(category.id) %></li>
-              </ul>
-            <% end %>
-          </div>
-        </div>
-      </div>
+
       <div class="col-md-8">
         <div class="section-part">
           <div class="main-banner">
@@ -22,7 +20,7 @@
 
         </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-4">
         <div class="section-part">
           <h4 class="section-header">Deal of the day</h4>
         </div>
@@ -41,7 +39,7 @@
                 <div class="caption">
                   <h3><%= link_to item.name, item %></h3>
                   <p class="amount"><%= number_to_currency(item.price) %></p>
-                  <span><i class="fa fa-map-marker" aria-hidden="true"><%= item.location %></i></span>
+                  <span><i class="fa fa-map-marker" aria-hidden="true"> <%= item.location %></i></span>
                   by:
                   <p class="seller-name label label-primary"><%= " #{item.user.name}" %></p>
                   <br>
@@ -56,18 +54,22 @@
       <h3>Featured Shop<small> Browse through your most trusted shops</small></h3>
     </div>
     <div class="row">
-      <div class="col-md-4">
-
-
+        <% @shops.each do |shop| %>
+          <div class="col-md-3">
+            <div class="thumbnail">
+              <%= link_to image_tag(shop.image(:medium)), shop %>
+                <div class="caption">
+                  <h3><%= link_to shop.name, shop %></h3>
+                  <p class="amount">Owned by: <%= link_to shop.user.name, shop.user %></p>
+                  <span><i class="fa fa-map-marker" aria-hidden="true"> <%= shop.location %></i></span>
+                  by:
+                  <p class="seller-name label label-primary"><%= " #{shop.user.name}" %></p>
+                  <br>
+                </div>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <div class="col-md-4">
-
-      </div>
-      <div class="col-md-4">
-
-      </div>
-    </div>
-
   </section>
 </div>
 
