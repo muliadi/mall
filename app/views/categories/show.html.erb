@@ -1,12 +1,10 @@
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+
 
 
 <div class="container">
   <div class="center">
+    <h3 class="page-header"><%= @category.name %></h3>
     <div class="row">
       <% @items.each do |item| %>
         <div class="col-md-3">
@@ -26,8 +24,9 @@
 
   <br>
   <%= link_to 'New Item', new_item_path %>
-</div>
+  <hr>
+  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= link_to 'Back', categories_path %> |
+  <%= link_to 'Delete', @category, method: :delete, data: { confirm: "Are you sure?" }%>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
-<%= link_to 'Delete', @category, method: :delete, data: { confirm: "Are you sure?" }%>
+</div>

@@ -17,7 +17,7 @@ $claeusRed: #f61616;
 }
 
 body {
-  background-color: #fcfcfc !important;
+  background-color: #F3F3F3 !important;
 }
 
 .container {
@@ -37,10 +37,17 @@ body {
 }
 
 nav {
-	border-radius: 0;
-	background-color: #e5e5e5 !important;
-  margin-bottom: 0;
+  border-bottom: 1px solid $dark;
+	border-radius: 0 !important;
+	background-color: $white !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
 	.navbar-brand {
+    font-weight: 600;
+  	font-size: 3rem;
+  	font-family: monospace;
+    margin-right: 4rem;
+    color: $claeusRed !important;
 		a {
 			color: #BD1E23;
 			font-weight: bold;
@@ -49,30 +56,24 @@ nav {
 			}
 		}
 	}
-}
-
-.navbar {
-	border-radius: 0;
-	background-color: #FFFFFF;
-  margin-bottom: 0 !important;
-}
-.navbar-right {
-  li {
-    font-size: 1.4rem;
+  .navbar-right {
+    li {
+      a{
+        color: $claeusRed !important;
+        font-weight: bold;
+      }
+    }
   }
+  .navbar-default,
+  .navbar {
+    width: 100% !important;
+    border-radius: 0 !important;
+    border-color: 0 !important;
+    border: 0 !important;
+  }
+
 }
 
-.navbar-brand {
-	font-weight: bold;
-	font-size: 2rem;
-	font-family: monospace;
-  line-height: inherit;
-}
-
-.navbar-form {
-	margin: 0;
-	padding: 0;
-}
 
 .main-search {
   .form-control,
@@ -80,9 +81,10 @@ nav {
     border: 2px solid $light !important;
   }
   .form-control {
-    width: 400px !important;
+    width: 500px !important;
     padding: .6rem;
     border-radius: 0;
+    padding-left: 1rem;
   }
   .button-other {
     width: 120px !important;
@@ -91,31 +93,6 @@ nav {
 
 }
 
-
-.main {
-	width: 100%;
-	height: 300px;
-	background-image: url('jumbotron.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	color: $white;
-
-
-}
-#only-text {
-  a{
-    text-align: center;
-  }
-}
-.banner-elements {
-	width: 90%;
-	margin: 5rem auto;
-	padding: 5rem auto;
-	h4 {
-		margin-top: 0;
-	}
-}
 
 
 .thumbnail {
@@ -143,20 +120,15 @@ nav {
 
 }
 
-
-
 .item-desc {
   min-height: 10rem;
 }
 
-span {
+i{
   line-height: 2rem;
-  i{
-    line-height: 2rem;
-    padding-right: .5rem;
-  }
+  padding-right: .5rem;
+  color: inherit;
 }
-
 .label {
   padding: .5rem !important;
 }
@@ -164,6 +136,7 @@ span {
 #thin-line {
   padding: 2rem;
   border-left: 1px solid $claeusRed;
+  margin-bottom: 2rem;
 }
 
 .sign-in {
@@ -173,6 +146,7 @@ span {
 
 .page-header {
   text-align: center;
+  margin: 20px !important;
 }
 
 
@@ -221,6 +195,25 @@ textarea {
     position: inherit;
   }
 
+}
+.cat-nav {
+  background-color: $white;
+  margin-bottom: 1px solid $light;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+  .cat-list{
+    li{
+      list-style: none;
+      display: inline-block;
+      padding: .7rem;
+      a{
+        color: #0f6cb2;
+      }
+    }
+  }
+}
+
+.edit {
+  padding: 1.5rem;
 }
 
 /*****************************
@@ -273,9 +266,9 @@ textarea {
 }
 
 .button-other {
-	border: 2px solid #FE5F55;
+	border: 2px solid $claeusRed;
 	background-color: #FFFFFF;
-	color: #ff4444;
+	color: $claeusRed;
 	padding: 1rem;
 
 }

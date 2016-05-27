@@ -15,12 +15,14 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @categories = Category.all
   end
 
   # GET /items/new
   def new
     @item = Item.new
     @category = Category.new
+    @categories = Category.all
   end
 
   def search

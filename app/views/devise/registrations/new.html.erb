@@ -1,7 +1,7 @@
 
 
-<div class="container">
-  <div class="section">
+<div class="container-fluid">
+  <div class="section clearfix">
     <div class="row">
       <h3 class="page-header">Sign Up for free and enjoy claeus now</h3>
       <div class="col-md-6" >
@@ -9,7 +9,7 @@
         <%= link_to "Sign into your account", new_user_session_path, class: "button-other" %>
 
       </div>
-      <div class="col-md-6" id="thin-line">
+      <div class="col-md-6" id="thin-line ">
         <h3 class="page-header">Register</h3>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>

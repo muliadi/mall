@@ -1,7 +1,7 @@
 <div class="section">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="thumbnail">
           <%= image_tag @item.image %>
         </div>
@@ -20,7 +20,6 @@
           <%= " #{@item.user.name}" %>
         </p><br >
         <br>
-        <button type="button" name="button" class="btn btn-primary">Add to Cart</button>
         <button type="button" name="button" class="btn btn-primary">Contact Seller</button>
 
         <% if (user_signed_in?) && (current_user == @item.user) %>
@@ -29,15 +28,18 @@
           <%= link_to "Delete", @item, method: :get, data: {confirm: "Are you sure?"} %>
         <% end %>
       </div>
-      <div class="col-md-12">
-        <ul class="nav nav-tabs">
-          <li role="presentation" class="active"><a href="#">Galery</a></li>
-          <li role="presentation"><a href="#">Review</a></li>
-          <li role="presentation"><a href="#">Problems</a></li>
-        </ul>
-      </div>
-    </div>
+      <div class="col-md-2">
+        <div class="section-part">
 
+        </div>
+      </div>
+    <div class="col-md-12">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">Galery</a></li>
+        <li role="presentation"><a href="#">Review</a></li>
+        <li role="presentation"><a href="#">Problems</a></li>
+      </ul>
+    </div>
 
   </div>
 </div>

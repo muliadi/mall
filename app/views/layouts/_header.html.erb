@@ -1,4 +1,5 @@
-<nav class="navbar navbar-default clearfix">
+
+<nav class=" navbar-default clearfix">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="row">
@@ -20,10 +21,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="main-search">
         <%= form_tag search_items_path, class: "navbar-form navbar-left", method: :get do |f| %>
-          <div class="form-group">
+          <div class="form-group has-feedback has-feedback-left">
             <%= text_field_tag :search, nil, placeholder: "What are you looking for? ", class: " form-control" %>
           </div>
-          <%= submit_tag "Search", class: "btn btn-default" %>
+          <%= submit_tag "Search", class: " button-default" %>
         <% end %>
       </div>
 
@@ -36,8 +37,18 @@
         <% else %>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
           <li> <%= link_to "Sign In", new_user_session_path %></li>
+          <li> <%= link_to "", new_user_session_path, class: "fa fa-shopping-bag fa-lg" %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<div class="cat-nav">
+  <div class="container">
+    <ul class="cat-list">
+      <% @categories.each do |category| %>
+          <li><%= link_to category.name, category_path(category.id) %></li> <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+      <% end %>
+    </ul>
+  </div>
+</div>

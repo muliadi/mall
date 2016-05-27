@@ -11,6 +11,8 @@ class ShopsController < ApplicationController
   # GET /shops/1.json
   def show
     @items = Item.where(user: current_user).order("created_at DESC")
+    @user = User.all
+    @categories = Category.all
   end
 
   # GET /shops/new
@@ -18,6 +20,7 @@ class ShopsController < ApplicationController
     @shop = Shop.new
     @user = User.new
     @category = Category.new
+    @categories = Category.all
   end
 
   # GET /shops/1/edit

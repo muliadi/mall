@@ -10,6 +10,7 @@ class Item < ActiveRecord::Base
 
   validates :name, :description, :price, :location, :category_id, presence: true
 
+
   def self.search(params)
     if params[:category].present?
       items = Item.where(category_id: params[:category].to_i)
