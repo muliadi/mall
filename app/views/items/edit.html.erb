@@ -1,6 +1,21 @@
-<h1>Editing Item</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @item %> |
-<%= link_to 'Back', items_path %>
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <p>Remember a good description with a nice and clear pictures sells more.</p>
+      </div>
+      <div class="col-md-8">
+        <h1>Make changes to this item.</h1>
+
+        <%= render 'form' %>
+        <hr>
+      </div>
+    </div>
+
+    <%= link_to 'Show', @item %> |
+    <%= link_to 'Back', items_path %><br>
+    <br>
+  </div>
+</div>

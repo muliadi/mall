@@ -9,13 +9,24 @@
           <h6 style="font-weight: bold"><%= @user.name %></h6>
           <span><i class="fa fa-map-marker" aria-hidden="true"> <%= user_location %></i></span>
           <br><hr>
-          <button type="button" name="button" class="btn button-default">Follow</button>
+
+          <% if (current_user != @user) %>
+            <button type="button" name="button" class="btn button-default">Follow</button>
+          <% end %>
+
         </div>
       </div>
       <div class="col-md-6 section-part">
         <h4>Shipping Information</h4>
-
-
+        <p>
+          Address:
+        </p>
+        <p>
+          Phone:
+        </p>
+        <p>
+          Available hours:
+        </p>
       </div>
       <% if (user_signed_in?) && (current_user == @user) %>
         <div class="col-md-3 section-part">

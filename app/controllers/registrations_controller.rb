@@ -15,9 +15,10 @@ class RegistrationsController < Devise::RegistrationsController
     # end
 
     # GET /resource/edit
-    # def edit
-    #   super
-    # end
+    def edit
+      @categories = Category.all
+      super
+    end
 
     # PUT /resource
     # def update

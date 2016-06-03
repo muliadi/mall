@@ -24,17 +24,18 @@ $claeusRed: #f61616;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 2rem;
+    padding-top: 2rem;
   }
   .page-header {
     h3{
       padding-top: 1rem;
     }
   }
-  .col-md-2,
-  .col-md-8 {
-    padding-right: .1rem !important;
-    padding-left: .1rem !important;
-  }
+  // .col-md-2,
+  // .col-md-8 {
+  //   padding-right: .1rem !important;
+  //   padding-left: .1rem !important;
+  // }
   .col-md-2 {
     height: 100%;
     margin-bottom: .5rem;

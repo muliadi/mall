@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
   end
 
   def search
+    @categories = Category.all
     if params[:category].blank? && params[:search].blank?
       @items = Item.all.order(created_at: :desc).page(params[:page]).per(20)
     else
@@ -34,6 +35,7 @@ class ItemsController < ApplicationController
   end
   # GET /items/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /items
