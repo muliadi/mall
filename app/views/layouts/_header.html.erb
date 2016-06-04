@@ -35,6 +35,7 @@
           <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-home fa-2x" aria-hidden="true"></i>Sign Out<% end %> </li>
           <li class="round-image-50"><%= image_tag(current_user.image(:thumb))%></li>
         <% else %>
+          <li> <%= link_to "Sell on claeus", new_user_session_path %></li>
           <li><%= link_to "Register", new_user_registration_path %></li>
           <li> <%= link_to "Log In", new_user_session_path %></li>
         <% end %>

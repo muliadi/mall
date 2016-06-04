@@ -73,6 +73,21 @@ nav {
 
 }
 
+.panel {
+  h3 {
+    margin-top: .5rem;
+  }
+  text-align: center;
+}
+#main-banner {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),url('back.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .main-search {
   .form-control,
@@ -176,8 +191,9 @@ textarea {
   border-bottom: 2px solid $light;
 }
 
-.big-search {
+.home-banner {
   max-width: 100%;
+  color: $light;
   .form-control {
     width: 100% !important;
     margin: 0 auto;

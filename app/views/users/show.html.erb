@@ -2,7 +2,7 @@
 <section class="section">
   <div class="container">
     <div class="row">
-      <h4 class="page-header"><%= @user.name %>'s Profile</h4>
+      <h4 class="page-header">Welcome back, <%= @user.name %>!</h4>
       <div class="col-md-3 section-part">
         <div class="center">
           <span class="round-image-100"><%= image_tag(@user.image(:thumb)) %></span>
@@ -32,7 +32,7 @@
       </div>
       <% if (user_signed_in?) && (current_user == @user) %>
         <div class="col-md-3 section-part">
-          <h5>Create a shop and start sellin things you like</h5><hr>
+          <h5>Got any great stuff to sell?</h5><hr>
           <%= link_to "Create a Shop", new_shop_path , class: " btn button-default" %>
         </div>
       <% end %>

@@ -1,6 +1,6 @@
 <div class="container-fluid">
-  <div class="section clearfix">
-    <div class="big-search">
+  <div class="section clearfix" id="main-banner">
+    <div class="home-banner">
       <div class="center">
         <h3>Welcome to the best place to sell and buy online in Ghana</h3><br>
         <p>
@@ -12,18 +12,25 @@
             <i class="fa fa-search fa-2x form-control-feedback"></i>
           </div>
         <% end %>
-        <h4 class="page-header">Shop by category</h4>
-        <div class="row">
-            <% @categories.each do |category| %>
-              <div class="col-md-2">
-                  <div class="panel">
-                    <h3><%= link_to category.name, category_path(category.id) %></h3>
-                  </div>
-                </div>
-            <% end %>
-          </div>
+        <!-- <div class="sell-banner">
+          <h5>Got any great stuff to sell?</h5>
+          <p>
+            Get started its fast & easy.
+          </p>
+        </div> -->
+
       </div>
 
     </div>
   </div>
+  <h4 class="page-header">Shop by category</h4>
+  <div class="row">
+      <% @categories.each do |category| %>
+        <div class="col-md-3">
+            <div class="panel">
+              <h3><%= link_to category.name, category_path(category.id) %></h3>
+            </div>
+          </div>
+      <% end %>
+    </div>
 </div>
