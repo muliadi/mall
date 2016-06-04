@@ -1,11 +1,9 @@
-<div class="container-fluid">
-  <div class="section clearfix" id="main-banner">
+<div class="">
+  <div class="section-home clearfix" id="main-banner">
     <div class="home-banner">
-      <div class="center">
-        <h3>Welcome to the best place to sell and buy online in Ghana</h3><br>
-        <p>
-          Buy and sell everything from electronics to baby products, property  and more in Ghana - for free!
-        </p>
+      <div class="center"><br>
+        <h2 class="center">Welcome to the best place to sell and buy online in Ghana</h2><br>
+
         <%= form_tag search_items_path, method: :get do |f| %>
           <div class="form-group has-feedback">
             <%= text_field_tag :search, nil, placeholder: "What are you shopping for today?", class: " form-control" %>
