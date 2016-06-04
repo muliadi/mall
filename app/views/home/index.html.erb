@@ -1,8 +1,8 @@
-<div class="">
+
   <div class="section-home clearfix" id="main-banner">
     <div class="home-banner">
       <div class="center"><br>
-        <h2 class="center">Welcome to the best place to sell and buy online in Ghana</h2><br>
+        <h2 class="center">Find anything no matter what you want.</h2><br>
 
         <%= form_tag search_items_path, method: :get do |f| %>
           <div class="form-group has-feedback">
@@ -10,6 +10,7 @@
             <i class="fa fa-search fa-2x form-control-feedback"></i>
           </div>
         <% end %>
+
         <!-- <div class="sell-banner">
           <h5>Got any great stuff to sell?</h5>
           <p>
@@ -21,14 +22,21 @@
 
     </div>
   </div>
-  <h4 class="page-header">Shop by category</h4>
-  <div class="row">
-      <% @categories.each do |category| %>
-        <div class="col-md-3">
-            <div class="panel">
-              <h3><%= link_to category.name, category_path(category.id) %></h3>
+
+  <div class="container">
+    <h4 class="page-header">Shop by category</h4>
+    <div class="row">
+        <% @categories.each do |category| %>
+          <div class="col-md-3">
+              <div class="panel">
+                <h3><%= link_to category.name, category_path(category.id) %></h3>
+              </div>
             </div>
-          </div>
-      <% end %>
+        <% end %>
+      </div>
+  </div>
+  <div class="container">
+    <div class="section">
+      <h3 class="section-header" style="text-align: center;">Stall of the day</h3>
     </div>
-</div>
+  </div>
