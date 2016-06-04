@@ -8,11 +8,16 @@
           <span class="round-image-100"><%= image_tag(@user.image(:thumb)) %></span>
           <h6 style="font-weight: bold"><%= @user.name %></h6>
           <span><i class="fa fa-map-marker" aria-hidden="true"> <%= user_location %></i></span>
-          <br><hr>
+          <br>
 
           <% if (current_user != @user) %>
+          <hr>
             <button type="button" name="button" class="btn button-default">Follow</button>
           <% end %>
+
+          <hr>
+          <h3>Shops</h3>
+          display shops user has
 
         </div>
       </div>
@@ -23,9 +28,6 @@
         </p>
         <p>
           Phone:
-        </p>
-        <p>
-          Available hours:
         </p>
       </div>
       <% if (user_signed_in?) && (current_user == @user) %>

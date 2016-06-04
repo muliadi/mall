@@ -1,66 +1,29 @@
-
-
-
-<br>
-<div class="container">
-  <section class="row clearfix">
-    <div class="">
-      <div class="col-md-9">
-        <div class="section-part section">
-          <div class="main-banner">
-
-          </div>
-
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="section-part section">
-          <h4 class="section-header">Deal of the day</h4>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="page-header">
-      <h3>Featured items<small> Browse through our latest items</small></h3>
-    </div>
-    <div class="row">
-        <% @items.each do |item| %>
-          <div class="col-md-2">
-            <div class="thumbnail">
-              <%= link_to image_tag(item.image.url(:medium)), item %>
-                <div class="caption">
-                  <h3><%= link_to item.name, item %></h3>
-                  <p class="amount"><%= number_to_currency(item.price) %></p>
-                  <span><i class="fa fa-map-marker" aria-hidden="true"> <%= item.location %></i></span><br>
-                  <p class="seller-name label label-primary">by:<%= "#{item.user.name}" %></p>
-                  <br>
-                </div>
-            </div>
+<div class="container-fluid">
+  <div class="section clearfix">
+    <div class="big-search">
+      <div class="center">
+        <h3>Welcome to the best place to sell and buy online in Ghana</h3><br>
+        <p>
+          Buy and sell everything from electronics to baby products, property  and more in Ghana - for free!
+        </p>
+        <%= form_tag search_items_path, method: :get do |f| %>
+          <div class="form-group has-feedback">
+            <%= text_field_tag :search, nil, placeholder: "What are you shopping for today?", class: " form-control" %>
+            <i class="fa fa-search fa-2x form-control-feedback"></i>
           </div>
         <% end %>
-      </div>
-  </section>
-  <section class="section">
-    <div class="page-header">
-      <h3>Featured Shops<small> Browse shops worth visiting</small></h3>
-    </div>
-    <div class="row">
-        <% @shops.each do |shop| %>
-          <div class="col-md-3">
-            <div class="thumbnail">
-              <%= link_to image_tag(shop.image(:medium)), shop %>
-                <div class="caption">
-                  <h3><%= link_to shop.name, shop %></h3>
-                  <span><i class="fa fa-map-marker" aria-hidden="true"> <%= shop.city %></i></span>
-                  <!-- <p class="seller-name label label-primary">Owned by<%= " #{shop.user.name}" %></p> -->
-                  <br>
+        <h4 class="page-header">Shop by category</h4>
+        <div class="row">
+            <% @categories.each do |category| %>
+              <div class="col-md-2">
+                  <div class="panel">
+                    <h3><%= link_to category.name, category_path(category.id) %></h3>
+                  </div>
                 </div>
-            </div>
+            <% end %>
           </div>
-        <% end %>
       </div>
-  </section>
-</div>
 
+    </div>
+  </div>
 </div>

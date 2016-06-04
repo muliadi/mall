@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
   
+  get 'pages/about'
+
+  get 'pages/sell'
+
+  get 'pages/buy'
+
+  get 'pages/contact'
+
   resources :orders
   devise_for :users, controllers: {sessions: "sessions", registrations: "registrations"}
   resources :shops
